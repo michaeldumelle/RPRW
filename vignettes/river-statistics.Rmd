@@ -55,10 +55,10 @@ river_medians(river, "Mi|C")
 
 To learn more about `river_medians()`, run `?river_medians`.
 
-3. `river_stat()`, which summarizes a general function of length and discharge for rivers whose names match a particular pattern
+3. `river_stats()`, which summarizes a general function of length and discharge for rivers whose names match a particular pattern
 ```{r}
-river_stat(river, "Mi|C", min)
-river_stat(river, "Mi|C", max)
+river_stats(river, "Mi|C", min)
+river_stats(river, "Mi|C", max)
 ```
 
-To learn more about `river_stat()`, run `?river_stat`
+To learn more about `river_stats()`, run `?river_stats`

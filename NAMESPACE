@@ -2,5 +2,5 @@
 
 export(river_means)
 export(river_medians)
-export(river_stat)
+export(river_stats)
 import(stats)

@@ -11,8 +11,8 @@
 #'
 #' @examples
 #' data("river")
-#' river_stat(river, "Mi|C", mean, trim = 0.5)
-river_stat <- function(data, pattern, FUN, ...) {
+#' river_stats(river, "Mi|C", mean, trim = 0.5)
+river_stats <- function(data, pattern, FUN, ...) {
   # find the column locations of the rivers matching the pattern
   desired_rivers <- grep(pattern, names(data))
   # error if a pattern is not matched

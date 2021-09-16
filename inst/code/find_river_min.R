@@ -3,7 +3,7 @@ library(RPRW)
 library(readr)
 
 ## find minimums
-river_min <- river_stat(river, "C", min)
+river_min <- river_stats(river, "C", min)
 
 min_df <- data.frame(
   data = "river",

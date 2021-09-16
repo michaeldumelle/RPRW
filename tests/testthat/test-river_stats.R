@@ -3,7 +3,7 @@ test_that("the min length is calculated correctly in a test case", {
   # calculate values required for the test for length
 
   ## calculate the mins from the function
-  river_mins_val <- river_stat(river, "Missouri|Mississippi", min)
+  river_mins_val <- river_stats(river, "Missouri|Mississippi", min)
   river_mins_length <- river_mins_val[[1]]
 
   ## calculate the mins "by hand"
@@ -21,7 +21,7 @@ test_that("the min discharge is calculated correctly in a test case", {
   # calculate values required for the test for length
 
   ## calculate the mins from the function
-  river_mins_val <- river_stat(river, "Missouri|Mississippi", min)
+  river_mins_val <- river_stats(river, "Missouri|Mississippi", min)
   river_mins_length <- river_mins_val[[2]]
 
   ## calculate the mins "by hand"
@@ -39,7 +39,7 @@ test_that("the max length is calculated correctly in a test case", {
   # calculate values required for the test for length
 
   ## calculate the maxs from the function
-  river_maxs_val <- river_stat(river, "Missouri|Mississippi", max)
+  river_maxs_val <- river_stats(river, "Missouri|Mississippi", max)
   river_maxs_length <- river_maxs_val[[1]]
 
   ## calculate the maxs "by hand"
@@ -57,7 +57,7 @@ test_that("the max discharge is calculated correctly in a test case", {
   # calculate values required for the test for length
 
   ## calculate the maxs from the function
-  river_maxs_val <- river_stat(river, "Missouri|Mississippi", max)
+  river_maxs_val <- river_stats(river, "Missouri|Mississippi", max)
   river_maxs_length <- river_maxs_val[[2]]
 
   ## calculate the maxs "by hand"
@@ -75,7 +75,7 @@ test_that("the trimmed mean length is calculated correctly in a test case", {
   # calculate values required for the test for length
 
   ## calculate the means from the function
-  river_means_val <- river_stat(river, "Missouri|Mississippi", mean, trim = 0.5)
+  river_means_val <- river_stats(river, "Missouri|Mississippi", mean, trim = 0.5)
   river_means_length <- river_means_val[[1]]
 
   ## calculate the means "by hand"
@@ -93,7 +93,7 @@ test_that("the trimmed mean discharge is calculated correctly in a test case", {
   # calculate values required for the test for length
 
   ## calculate the means from the function
-  river_means_val <- river_stat(river, "Missouri|Mississippi", mean, trim = 0.5)
+  river_means_val <- river_stats(river, "Missouri|Mississippi", mean, trim = 0.5)
   river_means_length <- river_means_val[[2]]
 
   ## calculate the means "by hand"
@@ -147,7 +147,7 @@ test_that("the minimum length is calculated correctly in a test case with one ma
   # calculate values required for the test for length
 
   ## calculate the medians from the function
-  river_mins_val <- river_stat(river, "Missouri", min)
+  river_mins_val <- river_stats(river, "Missouri", min)
   river_mins_length <- river_mins_val[[1]]
 
   ## calculate the medians "by hand"
@@ -165,7 +165,7 @@ test_that("the minimum length is calculated correctly in a test case with one ma
   # calculate values required for the test for length
 
   ## calculate the medians from the function
-  river_mins_val <- river_stat(river, "Missouri", min)
+  river_mins_val <- river_stats(river, "Missouri", min)
   river_mins_length <- river_mins_val[[2]]
 
   ## calculate the medians "by hand"
@@ -180,5 +180,5 @@ test_that("the minimum length is calculated correctly in a test case with one ma
 
 test_that("an error is returned in a test case with zero matches", {
   # the function should return an error
-  expect_error(river_stat(rivers, "ZZZ", min))
+  expect_error(river_stats(rivers, "ZZZ", min))
 })
