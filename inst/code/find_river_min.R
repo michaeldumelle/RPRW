@@ -1,0 +1,15 @@
+# find some summary statistics on rivers with pattern "C"
+library(RPRW)
+library(readr)
+
+## find minimums
+river_min <- river_stat(river, "C", min)
+
+min_df <- data.frame(
+  data = "river",
+  pattern = "C",
+  length_min = river_min[[1]],
+  discharge_min = river_min[[2]]
+)
+
+write_csv(min_df, "inst/output/min_df")

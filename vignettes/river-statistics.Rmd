@@ -1,0 +1,64 @@
+---
+title: "River Statistics"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{River Statistics}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = FALSE,
+  comment = "#>"
+)
+```
+
+# The RPRW R Package
+
+## Loading the Package
+
+First, install and load the RPRW package
+```{r, eval = FALSE}
+install.packages("RPRW")
+library(RPRW)
+```
+
+```{r, echo = FALSE}
+library(RPRW)
+```
+
+## The `river` data
+
+We can inspect the `river` data, which contains length and discharge measurements for several rivers
+```{r}
+river
+```
+
+To learn more about the data, run `?river`.
+
+## Using the Package
+
+This R package is designed to summarize length and discharge for rivers whose names match a particular pattern. There are three functions:
+
+1. `river_means()`, which summarizes the mean length and discharge
+```{r}
+river_means(river, "Mi|C")
+```
+
+To learn more about `river_means()`, run `?river_means`.
+
+2. `river_medians()`, which summarizes the mean length and discharge for rivers whose names match a particular pattern
+```{r}
+river_medians(river, "Mi|C")
+```
+
+To learn more about `river_medians()`, run `?river_medians`.
+
+3. `river_stat()`, which summarizes a general function of length and discharge for rivers whose names match a particular pattern
+```{r}
+river_stat(river, "Mi|C", min)
+river_stat(river, "Mi|C", max)
+```
+
+To learn more about `river_stat()`, run `?river_stat`

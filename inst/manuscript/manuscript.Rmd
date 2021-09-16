@@ -1,0 +1,100 @@
+---
+title: |
+  A manuscript about rivers
+author:
+  - name: Michael Dumelle
+    affil: a
+    email: Dumelle.Michael@epa.gov
+affiliation:
+  - num: a
+    address: |
+      United States Environmental Protection Agency -
+      200 SW 35th St, Corvallis, OR, 97333
+bibliography: interactcadsample.bib
+appendix: appendix.tex
+abstract: |
+  This abstract about rivers secretly describes that this document serves as a
+  template for authors who are preparing a manuscript for a Taylor & 
+  Francis journal using the \LaTeX\ document preparation system and the 
+  `interact` class file, which is available via selected journals' home 
+  pages on the Taylor & Francis website.
+keywords: |
+  River; Length; Discharge
+header-includes: |
+  \usepackage{hyperref}
+  \usepackage[utf8]{inputenc}
+  \def\tightlist{}
+output: rticles::tf_article
+---
+
+# Introduction {#intro}
+
+This is my introduction about rivers. Next we talk about the background, which I refer to here as Section \ref{background}. 
+
+# Background {#background}
+
+Rivers are neat. We wanted to study river length and discharge. Next we give subsections discussing both.
+
+## Length {#subsec:length}
+
+This is where I talk about river length.
+
+## Discharge {#subsec:discharge}
+
+This is where I talk about river discharge.
+
+# Methods {#sec:methods}
+
+This is where I talk about methods. It may include an equation like this one defining a mean
+\begin{equation}\label{eq:mean}
+  \bar{x} = \frac{1}{n}\sum_{i = 1}^n x_i
+\end{equation}
+I can refer to that equation as Equation \ref{eq:mean}.
+
+# Analysis {#sec:analysis}
+
+```{r, include = FALSE}
+# this is my R setup chunk
+knitr::opts_chunk$set(
+  collapse = FALSE,
+  comment = "#>",
+  echo = FALSE
+)
+```
+
+```{r, message = FALSE, warning = FALSE}
+library(RPRW)
+library(xtable)
+library(readr)
+library(here)
+```
+
+
+
+```{r, message = FALSE, results = "asis"}
+river_C <- river[, grep("C", names(river))]
+river_C_table <- xtable(river_C, label = "tab:rivers_C", caption = "Rivers whose names start with C")
+print(river_C_table, comment = FALSE)
+
+min_df <- read_csv(here("inst", "output", "min_df"))
+min_df_table <- xtable(min_df[, -1], label = "tab:rivers_min", caption = "Length and discharge minimums for rives whose names start with C")
+print(min_df_table, inclue.rownames = FALSE, comment = FALSE)
+```
+
+The length minimum in Table \ref{tab:rivers_min} is `r min_df[["length_min"]]` kilometers. Further exploring the data, we present a plot of river length vs discharge in Figure \ref{fig:rivers}. 
+```{r rivers, fig.align = "center", fig.cap = "River length vs discharge", out.width = "75%"}
+plot(
+  x = unlist(river["length", ]),
+  y = unlist(river["discharge", ]),
+  xlab = "length",
+  ylab = "discharge"
+)
+```
+
+# Discussion {#discussion}
+
+This is where I talk about my take-home points.
+
+# Data and Code Availability {-}
+
+The data are available here. The R package are available here. This article was published using the rticles package [@rticles2021]. Some LaTeX knowledge will be helpful when using rticles.
