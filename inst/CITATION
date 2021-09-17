@@ -1,0 +1,17 @@
+citHeader("To cite RPRW in publications use:")
+
+citEntry(
+  entry    = "Manual",
+  title    = "Using R Packages for Reproducible Workflows",
+  author   = personList(as.person("Michael Dumelle")),
+  journal  = "EPA 2021 R Workshop",
+  url      = "https://github.com/michaeldumelle/R-Packages-Reproducible-Workflows-Book",
+  textVersion =
+  paste(
+    "Michael Dumelle.",
+    "(2021).",
+    "Using R Packages for Reproducible Workflows.",
+    "EPA 2021 R Workshop.",
+    "URL https://github.com/michaeldumelle/R-Packages-Reproducible-Workflows-Book."
+  )
+)
