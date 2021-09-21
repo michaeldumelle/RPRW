@@ -21,6 +21,6 @@ A data frame with 2 rows (\code{length} and \code{discharge}) and 8 variables:
 river
 }
 \description{
-An data frame containing length and discharge of several river
+A data frame containing length and discharge of several rivers
 }
 \keyword{datasets}
