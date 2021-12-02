@@ -1,5 +1,5 @@
 # find some summary statistics on rivers with pattern "C"
-library(RPRW)
+library(cRPRW)
 
 ## find minimums
 river_min <- river_stats(river, "C", min)

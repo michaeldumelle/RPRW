@@ -1,4 +1,4 @@
-citHeader("To cite RPRW in publications use:")
+citHeader("To cite cRPRW in publications use:")
 
 citEntry(
   entry    = "Manual",

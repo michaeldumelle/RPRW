@@ -1,4 +1,4 @@
 library(testthat)
-library(RPRW)
+library(cRPRW)
 
-test_check("RPRW")
+test_check("cRPRW")

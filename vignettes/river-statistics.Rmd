@@ -20,12 +20,12 @@ knitr::opts_chunk$set(
 
 First, install and load the RPRW package
 ```{r, eval = FALSE}
-install.packages("RPRW")
-library(RPRW)
+install.packages("cRPRW")
+library(cRPRW)
 ```
 
 ```{r, echo = FALSE}
-library(RPRW)
+library(cRPRW)
 ```
 
 ## The `river` data
